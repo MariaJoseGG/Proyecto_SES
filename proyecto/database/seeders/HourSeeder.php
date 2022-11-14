@@ -15,25 +15,15 @@ class HourSeeder extends Seeder
     public function run()
     {
         //
-        
-
-        for ($i=7; $i <= 24; $i++) { 
+        for ($i=0; $i < 24; $i++) {
             $hour=new Hour;
             if($i<10){
-                $hour->name='0'.$i.'';
+                $hour->name='0'.$i.':00';
             }
             else{
-                $hour->name=''.$i.'';  
+                $hour->name=''.$i.':00'; 
             }
             $hour->save();
         }
-
-        for ($i=0; $i <= 6; $i++) { 
-            $hour=new Hour;
-            $hour->name='0'.$i.'';
-            $hour->save();
-        }
-
-    
     }
 }

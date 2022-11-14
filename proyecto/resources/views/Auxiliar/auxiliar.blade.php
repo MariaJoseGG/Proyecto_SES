@@ -23,8 +23,16 @@
                 </div>
             </a>
         </div>
+        
+        <div class="col">
+            <a href="{{route('turno.index')}}" class="list-group-item list-group-item-action">
+                <div class="text-center p-3">
+                    <img class="img-fluid" src="{{ asset('img/turno.jpg') }}" alt="Enfermera ingresando su hora de cambio de turno" width="300">
+                    <figcaption class="p-2">Ingresar hora de cambio de turno</figcaption>
+                </div>
+            </a>
+        </div>
 
-    <!-- <div class="row p-3"> -->
         <div class="col">
             <a href="{{route('signosV.index')}}" class="list-group-item list-group-item-action"> <!--cambiar ruta-->
                 <div class="text-center p-3">
@@ -34,6 +42,5 @@
             </a>
         </div>
     </div>
-    <!-- </div> -->
 </div>
 @endsection

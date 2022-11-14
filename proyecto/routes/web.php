@@ -27,6 +27,7 @@ Route::group(['middleware' => 'admin'], function () {
 // Rutas para el Auxiliar de enfermería
 Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
+    Route::resource('/turno', '\App\Http\Controllers\TurnoController');
     Route::resource('/signosV', '\App\Http\Controllers\SignosVController');
     Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
     Route::resource('/auxiliar', AuxiliarController::class);

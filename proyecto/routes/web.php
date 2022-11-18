@@ -28,6 +28,7 @@ Route::group(['middleware' => 'admin'], function () {
 Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
     Route::resource('/signosV', '\App\Http\Controllers\SignosVController');
+    Route::resource('/AdministrarDiagnostico', '\App\Http\Controllers\AdministrarDiagnosticoController');
     Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
     Route::resource('/auxiliar', AuxiliarController::class);
     Route::get('download-pdf', 'App\Http\Controllers\PacienteController@generar_pdf')->name('descargar-pdf');

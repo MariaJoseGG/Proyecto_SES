@@ -105,6 +105,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="{{ route('fluids.index') }}">Ingreso de líquidos</a></li>
                                     <li><a class="dropdown-item" href="{{ route('reporte1.index') }}">Balance del día</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('antecedentes') }}">Antecedentes</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -24,7 +24,7 @@ class FluidController extends Controller
         foreach (Fluid::all() as $fluid) {
             if($fluid->input==null && $exit==false){
                 $fluid->update([
-                    'input'=>(float)$request->input
+                    'input'=>(float)$request->input * 1000
                 ]);
                 $exit = true;
             }

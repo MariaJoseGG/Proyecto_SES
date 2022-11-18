@@ -47,3 +47,6 @@ Route::post('cuadro/creado', 'App\Http\Controllers\FluidController@store')->name
 Route::get('cuadro/generar-pdf', 'App\Http\Controllers\FluidController@pdf')->name('pdf');
 
 Route::resource('reporte1','\App\Http\Controllers\Reporte1Controller');
+
+Route::get('antecedentes','\App\Http\Controllers\AntecedentesController@index' )->name('antecedentes');
+Route::post('antecedentes/store','\App\Http\Controllers\AntecedentesController@store' )->name('antecedentes.store');

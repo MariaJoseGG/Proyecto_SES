@@ -46,7 +46,7 @@ class AdministrarDiagnosticoController extends Controller
         $AdministrarDiagnostico->descripcion = $request->descripcion;
         $AdministrarDiagnostico->save();
 
-        return redirect()->route('AdministrarDiagnostico.index')->with('success', 'Diagnostico del Paciente guardado');
+        return redirect()->route('AdministrarDiagnostico.index')->with('success', 'Diagnóstico del Paciente guardado');
     }
 
     /**
@@ -89,7 +89,7 @@ class AdministrarDiagnosticoController extends Controller
         $AdministrarDiagnostico->descripcion = $request->descripcion;
         $AdministrarDiagnostico->save();
 
-        return redirect()->route('AdministrarDiagnostico.index')->with('success', 'Diagnostico del paciente actualizado');
+        return redirect()->route('AdministrarDiagnostico.index')->with('success', 'Diagnóstico del paciente actualizado');
  
     }
 
@@ -101,9 +101,7 @@ class AdministrarDiagnosticoController extends Controller
      */
     public function destroy($id)
     {
-        $diagnostico = AdministrarDiagnostico::find($id);
-        $diagnostico->delete();
-        return redirect()->route('AdministrarDiagnostico.index')->with('warning', 'Diagnostico del paciente eliminado con éxito');
+        //
     }
 
 }

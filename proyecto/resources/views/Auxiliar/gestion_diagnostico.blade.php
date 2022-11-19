@@ -52,13 +52,6 @@
                     <a href="{{ route('AdministrarDiagnostico.edit',$Adiagnostico->id) }}" class="btn btn-primary">
                         <i class="bi bi-pencil-fill"></i>
                     </a>
-                    <form action="{{route('AdministrarDiagnostico.destroy',$Adiagnostico ?? ''->id)}}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger">
-                            <i class="bi bi-trash-fill"></i>
-                        </button>
-                    </form>
                 </td>
             </tr>
             @endif

@@ -1,13 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+@if( Auth::guest() )
+<div class="container text-center">
+    <h3>No es posible acceder a esta información</h3>
+    <b>Por favor inicie sesión</b>
+</div>
+@else
+@if(Auth::user()->tipo_usuario == 0 || Auth::user()->tipo_usuario == 2 || Auth::user()->tipo_usuario == 3)
 <div class="container w-100 bg-primary bg-opacity-75 border border-info text-center text-white">
     <p class="mx-4 my-4 fs-5">
         <b>
             CONTROL HEMODINÁMICO
         </b>
         <br>
-        Diagnóstico
+        Diagnóstico de pacientes
     </p>
 </div>
 
@@ -15,6 +22,7 @@
     @include('flash-message')
 </div>
 
+@if(Auth::user()->tipo_usuario == 3)
 <div class="container">
     <div class="row">
         <div class="col">
@@ -26,6 +34,7 @@
         </div>
     </div>
 </div>
+@endif
 
 <div class="table-responsive p-4">
     <table class="table table-bordered border-primary text-center table-hover">
@@ -35,7 +44,10 @@
                 <th scope="col">Fecha del registro</th>
                 <th scope="col">Tipo de Padecimiento</th>
                 <th scope="col">Descripción</th>
+                <th scope="col">Médico responsable</th>
+                @if(Auth::user()->tipo_usuario == 3)
                 <th scope="col">Acciones</th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -47,16 +59,21 @@
                 <td>{{$Adiagnostico->fecha}}</td>
                 <td>{{$Adiagnostico->tipoPadecimiento}}</td>
                 <td>{{$Adiagnostico->descripcion}}</td>
+                <td>{{DB::table('users')->where('id', $Adiagnostico->medico)->value('name');}}</td>
 
+                @if(Auth::user()->tipo_usuario == 3)
                 <td>
                     <a href="{{ route('AdministrarDiagnostico.edit',$Adiagnostico->id) }}" class="btn btn-primary">
                         <i class="bi bi-pencil-fill"></i>
                     </a>
                 </td>
+                @endif
             </tr>
             @endif
             @endforeach
         </tbody>
     </table>
 </div>
+@endif
+@endif
 @endsection

@@ -44,6 +44,7 @@
                 <th scope="col">Fecha del registro</th>
                 <th scope="col">Tipo de Padecimiento</th>
                 <th scope="col">Descripción</th>
+                <th scope="col">Médico responsable</th>
                 @if(Auth::user()->tipo_usuario == 3)
                 <th scope="col">Acciones</th>
                 @endif
@@ -58,6 +59,7 @@
                 <td>{{$Adiagnostico->fecha}}</td>
                 <td>{{$Adiagnostico->tipoPadecimiento}}</td>
                 <td>{{$Adiagnostico->descripcion}}</td>
+                <td>{{DB::table('users')->where('id', $Adiagnostico->medico)->value('name');}}</td>
 
                 @if(Auth::user()->tipo_usuario == 3)
                 <td>

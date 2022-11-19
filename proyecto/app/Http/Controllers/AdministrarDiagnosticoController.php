@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\AdministrarDiagnostico;
 use App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 
 class AdministrarDiagnosticoController extends Controller
 {
@@ -44,6 +45,7 @@ class AdministrarDiagnosticoController extends Controller
         $AdministrarDiagnostico->fecha = $request->fecha;
         $AdministrarDiagnostico->tipoPadecimiento = $request->tipoPadecimiento;
         $AdministrarDiagnostico->descripcion = $request->descripcion;
+        $AdministrarDiagnostico->medico = Auth::user()->id;
         $AdministrarDiagnostico->save();
 
         return redirect()->route('AdministrarDiagnostico.index')->with('success', 'Diagnóstico del Paciente guardado');

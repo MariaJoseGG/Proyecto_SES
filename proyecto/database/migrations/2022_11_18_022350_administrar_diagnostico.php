@@ -18,9 +18,11 @@ class AdministrarDiagnostico extends Migration
             $table->unsignedBigInteger('paciente');
             $table->date('fecha');
             $table->string('tipoPadecimiento');
-            $table->longText('descripcion');
+            $table->string('descripcion');
+            $table->unsignedBigInteger('medico');
             
             $table->foreign('paciente')->references('id')->on('pacientes');
+            $table->foreign('medico')->references('id')->on('users');
             $table->timestamps();
         });
     }

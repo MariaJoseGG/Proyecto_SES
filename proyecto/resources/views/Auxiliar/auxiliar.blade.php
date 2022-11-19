@@ -48,7 +48,7 @@
         <a href="{{route('diagnostico.index')}}" class="list-group-item list-group-item-action">
             <div class="text-center p-3">
                 <img class="img-fluid" src="{{ asset('img/diagnostico.jpg') }}" alt="Administrar Diagnostico" width="300">
-                <figcaption class="p-2">Administrar Diagnóstico</figcaption>
+                <figcaption class="p-2">Consultar Diagnósticos</figcaption>
             </div>
         </a>
     </div>

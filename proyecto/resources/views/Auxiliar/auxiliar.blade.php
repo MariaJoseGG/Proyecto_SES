@@ -34,7 +34,8 @@
         </div>
 
         <div class="col">
-            <a href="{{route('signosV.index')}}" class="list-group-item list-group-item-action"> <!--cambiar ruta-->
+            <a href="{{route('signosV.index')}}" class="list-group-item list-group-item-action">
+                <!--cambiar ruta-->
                 <div class="text-center p-3">
                     <img class="img-fluid" src="{{ asset('img/signos-vitales-0.jpg') }}" alt="signos vitales" width="300">
                     <figcaption class="p-2">Administrar Signos Vitales</figcaption>
@@ -42,5 +43,17 @@
             </a>
         </div>
     </div>
+    <div class="col">
+        <a href="{{route('AdministrarDiagnostico.index')}}" class="list-group-item list-group-item-action">
+            <!--cambiar ruta-->
+            <div class="text-center p-3">
+                <img class="img-fluid" src="{{ asset('img/diagnostico.jpg') }}" alt="Administrar Diagnostico" width="300">
+                <figcaption class="p-2">Administrar Diagnóstico</figcaption>
+            </div>
+        </a>
+    </div>
+</div>
+
+
 </div>
 @endsection

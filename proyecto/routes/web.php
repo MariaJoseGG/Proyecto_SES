@@ -36,7 +36,6 @@ Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/paciente', '\App\Http\Controllers\PacienteController');
     Route::resource('/turno', '\App\Http\Controllers\TurnoController');
     Route::resource('/signosV', '\App\Http\Controllers\SignosVController');
-    Route::resource('/AdministrarDiagnostico', '\App\Http\Controllers\AdministrarDiagnosticoController');
     Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
     Route::resource('/auxiliar', AuxiliarController::class);
     Route::get('download-pdf', 'App\Http\Controllers\PacienteController@generar_pdf')->name('descargar-pdf');
@@ -45,13 +44,17 @@ Route::group(['middleware' => 'auxiliar'], function () {
 // Rutas para el Jefe de enfermería
 Route::group(['middleware' => 'jefe'], function () {
     Route::resource('/jefe', JefeController::class);
-    Route::resource('/examen', '\App\Http\Controllers\ExamenController');  
+    Route::resource('/examen', '\App\Http\Controllers\ExamenController');
 });
 
 // Rutas para el Médico cardiovascular
 Route::group(['middleware' => 'medico'], function () {
-    Route::resource('/medico', MedicoController::class);    
+    Route::resource('/medico', MedicoController::class);
+    Route::resource('/AdministrarDiagnostico', '\App\Http\Controllers\AdministrarDiagnosticoController');
 });
+
+// Ruta común para los usuarios registrados en el sistema
+Route::get('diagnostico', 'App\Http\Controllers\AdministrarDiagnosticoController@index')->name('diagnostico.index');
 
 // Rutas públicas
 Route::get('/', function () {

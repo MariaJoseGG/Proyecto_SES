@@ -17,7 +17,7 @@ class AdministrarDiagnosticoController extends Controller
      */
     public function index()
     {
-        return view('Auxiliar.gestion_diagnostico')->with('diagnostico', AdministrarDiagnostico::all());
+        return view('Usuarios.gestion_diagnostico')->with('diagnostico', AdministrarDiagnostico::all());
     }
 
     /**
@@ -27,7 +27,7 @@ class AdministrarDiagnosticoController extends Controller
      */
     public function create()
     {
-        return view('Auxiliar.crear_diagnostico')->with('persona', Paciente::all());
+        return view('Medico.crear_diagnostico')->with('persona', Paciente::all());
     }
 
     /**
@@ -69,7 +69,7 @@ class AdministrarDiagnosticoController extends Controller
     public function edit($id)
     {
         $AdministrarDiagnostico = AdministrarDiagnostico::find($id);
-        return view('Auxiliar.editar_diagnostico')->with('AdministrarDiagnostico', $AdministrarDiagnostico);
+        return view('Medico.editar_diagnostico')->with('AdministrarDiagnostico', $AdministrarDiagnostico);
     }
 
     /**
@@ -103,5 +103,4 @@ class AdministrarDiagnosticoController extends Controller
     {
         //
     }
-
 }

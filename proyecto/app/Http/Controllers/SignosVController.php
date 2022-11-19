@@ -87,7 +87,6 @@ class SignosVController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
         $signosvitales = signosVitales::find($id);
         
         $signosvitales->fecha = $request->fecha;

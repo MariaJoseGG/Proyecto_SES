@@ -24,6 +24,12 @@ class Auxiliar
             case ('0'):
                 return $next($request); // si es un usuario continúa a la ruta USER
                 break;
+            case ('2'):
+                return redirect('jefe'); // si es un jefe redirige a la ruta JEFE
+                break;
+            case ('3'):
+                return redirect('medico'); // si es un médico redirige a la ruta MEDICO
+                break;
         }
     }
 }

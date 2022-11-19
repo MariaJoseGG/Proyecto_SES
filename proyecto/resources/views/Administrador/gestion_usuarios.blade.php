@@ -39,8 +39,12 @@
                 
                 @if ($usuario->tipo_usuario === "0")
                 <td>Auxiliar de enfermería</td>
-                @else
+                @elseif($usuario->tipo_usuario === "1")
                 <td>Administrador</td>
+                @elseif($usuario->tipo_usuario === "3")
+                <td>Médico cardiovascular</td>
+                @else
+                <td>Jefe de enfermería</td>
                 @endif
 
                 <td>

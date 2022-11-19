@@ -13,7 +13,9 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {//modificar
+        Schema::create('users', function (Blueprint $table) {
+            $table->engine="InnoDB";
+            
             $table->id();
             $table->string('name');
             $table->string('identificacion');
@@ -22,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('tipo_usuario')->default("0"); // 0 = auxiliar && 1 = administrador
+            $table->string('tipo_usuario')->default("0"); // 0 = auxiliar - 1 = administrador - 2 = Jefe de enfermería - 3 = Médico cardiovascular
             $table->rememberToken();
             $table->timestamps();
         });

@@ -65,6 +65,8 @@
                 <select class="form-select" aria-label="Default select example" name="rol" id="rol">
                     <option value="0">Auxiliar de enfermería</option>
                     <option value="1">Administrador</option>
+                    <option value="2">Jefe de enfermería</option>
+                    <option value="3">Médico cardiovascular</option>
                 </select>
             </div>
         </div>

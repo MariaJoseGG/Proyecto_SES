@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Admin
+class Medico
 {
     /**
      * Handle an incoming request.
@@ -17,18 +17,18 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        switch (Auth::user()->tipo_usuario) {
-            case ('1'):
-                return $next($request); //si es administrador continúa al HOME
-                break;
-            case ('0'):
-                return redirect('auxiliar'); // si es un usuario normal redirige a la ruta auxiliar
+        switch (auth::user()->tipo_usuario) {
+            case ('3'):
+                return $next($request); // si es un médico continúa a la ruta MEDICO
                 break;
             case ('2'):
                 return redirect('jefe'); // si es un jefe redirige a la ruta JEFE
                 break;
-            case ('3'):
-                return redirect('medico'); // si es un médico redirige a la ruta MEDICO
+            case ('1'):
+                return redirect('home'); //si es administrador redirige al HOME
+                break;
+            case ('0'):
+                return redirect('auxiliar'); //si es auxiliar redirige a USER
                 break;
         }
     }

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,12 +33,26 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-primary" href="{{ url('/') }}">
-                    Inicio
+                <a class="navbar-brand text-primary" href="{{ route('home') }}">
+                    Home
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Servicios
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('fluids.index') }}">Ingreso de líquidos</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('reporte1.index') }}">Balance del día</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -89,26 +104,6 @@
                     <a class="navbar-brand" href="#">
                         <img class="img-fluid" src="{{ asset('img/logoSES.png') }}" alt="SES" width="250">
                     </a>
-                </div>
-            </nav>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Servicios
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('fluids.index') }}">Ingreso de líquidos</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('reporte1.index') }}">Balance del día</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </div>

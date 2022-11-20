@@ -59,7 +59,11 @@
             <div class="col-md-6">
                 <select class="form-select" aria-label="Default select example" name="doctor" id="doctor">
                     @foreach($doctor as $doc)
+                    @if(empty($doc->es_usuario))
                     <option value="{{$doc->id}}">{{$doc->nombre}}</option>
+                    @else
+                    <option value="{{$doc->id}}">{{DB::table('users')->where('id', $doc->es_usuario)->value('name');}}</option>
+                    @endif
                     @endforeach
                 </select>
             </div>

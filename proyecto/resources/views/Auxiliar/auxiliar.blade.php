@@ -33,6 +33,15 @@
                 </div>
             </a>
         </div>
+
+        <div class="col">
+            <a href="{{route('antecedentes.create')}}" class="list-group-item list-group-item-action">
+                <div class="text-center p-3">
+                    <img class="img-fluid" src="{{ asset('img/diagnostico-remove.png') }}" width="300">
+                    <figcaption class="p-2">Antecedentes de pacientes</figcaption>
+                </div>
+            </a>
+        </div>
     </div>
     <!-- </div> -->
 </div>

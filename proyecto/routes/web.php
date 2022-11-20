@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
     Route::resource('/auxiliar', AuxiliarController::class);
     Route::get('download-pdf', 'App\Http\Controllers\PacienteController@generar_pdf')->name('descargar-pdf');
+    Route::resource('/antecedentes', '\App\Http\Controllers\AntecedentesController');
 });
 
 // Rutas públicas
@@ -47,6 +48,3 @@ Route::post('cuadro/creado', 'App\Http\Controllers\FluidController@store')->name
 Route::get('cuadro/generar-pdf', 'App\Http\Controllers\FluidController@pdf')->name('pdf');
 
 Route::resource('reporte1','\App\Http\Controllers\Reporte1Controller');
-
-Route::get('antecedentes','\App\Http\Controllers\AntecedentesController@index' )->name('antecedentes');
-Route::post('antecedentes/store','\App\Http\Controllers\AntecedentesController@store' )->name('antecedentes.store');

@@ -16,6 +16,9 @@ class CreateAntecedentesTable extends Migration
         Schema::create('antecedentes', function (Blueprint $table) {
             $table->id();
             $table->string('antecedente');
+            $table->unsignedBigInteger('paciente');
+
+            $table->foreign('paciente')->references('id')->on('pacientes');
             $table->timestamps();
         });
     }

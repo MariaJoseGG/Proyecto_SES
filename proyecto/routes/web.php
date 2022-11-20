@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auxiliar'], function () {
     Route::resource('/restaurar', '\App\Http\Controllers\RestaurarController');
     Route::resource('/auxiliar', AuxiliarController::class);
     Route::get('download-pdf', 'App\Http\Controllers\PacienteController@generar_pdf')->name('descargar-pdf');
+    Route::resource('/antecedentes', '\App\Http\Controllers\AntecedentesController');
 });
 
 // Rutas para el Jefe de enfermería

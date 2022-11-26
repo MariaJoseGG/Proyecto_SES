@@ -16,7 +16,7 @@
         @csrf
         <div class="mb-3">
             <label for="hora" class="form-label">Cantidad de líquido</label>
-            <input name="input" type="number" class="form-control" id="hora">
+            <input name="input" type="number" step="0.01" class="form-control" id="hora">
         </div>
         <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
